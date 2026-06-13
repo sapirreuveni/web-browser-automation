@@ -67,11 +67,11 @@ class CartPage(HeaderComp, BasePage):
 
     def clear_cart(self):
         self.page.goto("https://tutorialsninja.com/demo/index.php?route=checkout/cart")
-        self.page.wait_for_load_state("domcontentloaded")
+        self.page.wait_for_load_state("networkidle")
         while True:
             delete_buttons = self.page.locator(self.__DELETE_ITEM_BUTTON)
             if delete_buttons.count() == 0:
                 break
             delete_buttons.first.click()
-            self.page.wait_for_load_state("domcontentloaded")
+            self.page.wait_for_load_state("networkidle")
         self.go_home()
