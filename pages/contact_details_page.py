@@ -31,7 +31,7 @@ class ContactPage(HeaderComp, BasePage):
         self.fill_text(self.__NAME_FIELD, name)
         self.fill_text(self.__EMAIL_FIELD, email)
         self.fill_text(self.__ENQUIRY_FIELD, enquiry)
-        self.continue_bth()
+        self.continue_btn()
         self.page.wait_for_load_state("networkidle", timeout=5000)
 
     def get_error_message_email(self):

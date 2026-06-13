@@ -28,7 +28,7 @@ class WishListPage(HeaderComp, BasePage):
         self.click(self.__REMOVE_PRODUCT)
 
     def click_continue_button(self):
-        self.continue_bth()
+        self.continue_btn()
 
     def get_pass_message(self):
         text= self.get_text(self.__SUCCESS_MESSAGE)
