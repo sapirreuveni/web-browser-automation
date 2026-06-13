@@ -64,9 +64,6 @@ class CartPage(HeaderComp, BasePage):
         self.click(self.__CHECKOUT_BUTTON)
         self.click(self.__DELETE_ITEM_BUTTON)
 
-    def get_number_item(self):
-        area_list=self.page.locator("")
-        return  area_list.count()
 
     def clear_cart(self):
         self.page.goto("https://tutorialsninja.com/demo/index.php?route=checkout/cart")
