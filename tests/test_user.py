@@ -10,7 +10,7 @@ from utils.data_generator import (
 class TestUser(BaseTest):
 
   def test_00_logout(self):
-       self.my_account_page.long_out()
+       self.my_account_page.log_out()
 
   def test_01_create_user_pass(self):
       email = generate_random_email()
@@ -24,7 +24,7 @@ class TestUser(BaseTest):
       assert actual_result == expected_result
 
   def test_02_create_a_user_with_an_existing_email(self):
-      self.my_account_page.long_out()
+      self.my_account_page.log_out()
       self.create_profile_page.fill_info("sapir", "reuveni", "sapir3173@gmail.com", "0537449106", "123456", "123456")
       expected_result = "E-Mail Address is already registered!"
       actual_result = self.create_profile_page.get_error_message()

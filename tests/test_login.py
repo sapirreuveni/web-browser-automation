@@ -9,7 +9,7 @@ class TestLogin(BaseTest):
     __PASSWORD = ConfigReader.read_config("general", "password")
 
     def test_00_logout(self):
-       self.my_account_page.long_out()
+       self.my_account_page.log_out()
 
     def test_01_login_failed(self):
         random_email = generate_random_email()

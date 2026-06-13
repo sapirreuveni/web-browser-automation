@@ -35,11 +35,11 @@ class HeaderComp(BasePage):
         self.click(self.__TOP_BAR_MY_ACCOUNT_BTN)
         self.click(self.__TOP_BAR_LOGIN_BTN ,1)
 
-    def long_out(self):
+    def log_out(self):
         self.click(self.__TOP_BAR_MY_ACCOUNT_BTN)
         self.click(self.__TOP_BAR_LOGOUT_BTN)
 
-    def crate_user(self):
+    def create_user(self):
         self.click(self.__TOP_BAR_MY_ACCOUNT_BTN)
         self.click(self.__TOP_BAR_REGISTER_BTN,0)
 
@@ -67,7 +67,7 @@ class HeaderComp(BasePage):
     def cart(self):
         self.click(self.__TOP_BAR_CART_BTN)
 
-    def continue_bth(self):
+    def continue_btn(self):
         self.click(self.__CONTINUE_BTN)
 
 
