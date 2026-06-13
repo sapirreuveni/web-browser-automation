@@ -1,15 +1,19 @@
-# Web Browser Automation
+# 🌐 Web Browser Automation
 
-An end-to-end test automation framework for [TutorialsNinja demo store](https://tutorialsninja.com/demo/index.php), built with **Playwright** and **Pytest** using the Page Object Model (POM) design pattern.
+An end-to-end test automation framework for [TutorialsNinja demo store](https://tutorialsninja.com/demo/index.php), built with **Playwright** and **Pytest** using the **Page Object Model (POM)** design pattern.
 
-## Features
+---
 
-- Page Object Model architecture for clean, maintainable test code
-- Element highlighting on interaction for easy visual debugging
-- Centralized configuration via `config.ini`
-- Tests covering: login, cart, products, search, wish list, contact, user registration, and account details
+## ✨ Features
 
-## Project Structure
+- 🏗️ **Page Object Model** architecture for clean, maintainable test code
+- 🔦 **Element highlighting** on interaction for easy visual debugging
+- ⚙️ **Centralized configuration** via `config.ini`
+- 🧪 **Tests covering:** login, cart, products, search, wish list, contact, user registration, and account details
+
+---
+
+## 📁 Project Structure
 
 ```
 myproject/
@@ -40,7 +44,9 @@ myproject/
 └── requirements.txt
 ```
 
-## Setup
+---
+
+## 🚀 Setup
 
 **1. Clone the repository**
 ```bash
@@ -58,26 +64,33 @@ playwright install
 ```bash
 cp utils/config.ini.example utils/config.ini
 ```
-Edit `utils/config.ini` with your email and password for the demo site.
+Edit `utils/config.ini` with your **email** and **password** for the demo site.
 
-## Running Tests
+---
 
-Run all tests:
+## ▶️ Running Tests
+
+**Run all tests:**
 ```bash
 pytest
 ```
 
-Run a specific test file:
+**Run a specific test file:**
 ```bash
 pytest tests/test_cart.py
 ```
 
-Run with browser visible (headed mode):
+**Run with browser visible (headed mode):**
 ```bash
 pytest --headed
 ```
 
-## Tech Stack
+---
 
-- [Playwright](https://playwright.dev/python/) — browser automation
-- [Pytest](https://pytest.org/) — test framework
+## 🛠️ Tech Stack
+
+| Tool | Purpose |
+|------|---------|
+| 🎭 [Playwright](https://playwright.dev/python/) | Browser automation |
+| 🧪 [Pytest](https://pytest.org/) | Test framework |
+| 🐍 Python | Programming language |
