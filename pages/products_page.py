@@ -28,7 +28,8 @@ class ProductPage(HeaderComp, BasePage):
             if title_name ==name:
                 add_button = areas_list.nth(i).locator(self.__ADD_PRODUCT_TO_CART_BUTTON)
                 add_button.click()
-                break
+                return
+        raise ValueError(f"Product '{name}' not found on page")
 
     def add_product_to_wishlist(self,name):
         areas_list = self.page.locator(self.__PRODUCT_LIST)
@@ -37,7 +38,8 @@ class ProductPage(HeaderComp, BasePage):
             if title_name == name:
                like_button = areas_list.nth(i).locator(self.__ADD_TO_WISHLIST_BUTTON)
                like_button.click()
-               break
+               return
+        raise ValueError(f"Product '{name}' not found on page")
 
     def compare_product(self,name):
         areas_list = self.page.locator(self.__PRODUCT_LIST)
@@ -46,7 +48,8 @@ class ProductPage(HeaderComp, BasePage):
             if title_name == name:
                 compare_button = areas_list.nth(i).locator(self.__ADD_TO_COMPARE_BUTTON)
                 compare_button.click()
-                break
+                return
+        raise ValueError(f"Product '{name}' not found on page")
 
     def product_info(self,name):
         areas_list = self.page.locator(self.__PRODUCT_LIST)
@@ -56,6 +59,8 @@ class ProductPage(HeaderComp, BasePage):
                 item_info_button = areas_list.nth(i).locator(self.__ITEM_INFO)
                 item_info_button.click()
                 self.go_home()
+                return
+        raise ValueError(f"Product '{name}' not found on page")
 
     def get_number_item(self):
         self.navigate_to_likes_table()  # ניווט לעמוד שבו הטבלה נמצאת
