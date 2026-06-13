@@ -27,7 +27,7 @@ class RegisterPage(HeaderComp, BasePage):
         super().__init__(page)
 
     def fill_info(self, first_name, last_name, email, telephone, password, password_Confirm):
-        self.crate_user()
+        self.create_user()
         self.fill_text(self.__FIRST_NAME_FIELD, first_name)
         self.fill_text(self.__LAST_NAME_FIELD, last_name)
         self.fill_text(self.__EMAIL_FIELD, email)
@@ -35,7 +35,7 @@ class RegisterPage(HeaderComp, BasePage):
         self.fill_text(self.__PASSWORD_FIELD, password)
         self.fill_text(self.__PASSWORD_CONFIRM_FIELD, password_Confirm)
         self.force_check_checkbox(self.__AGREE_CHECKBOX)
-        self.continue_bth()
+        self.continue_btn()
 
     def get_success_message(self):
         text= self.get_text(self.__SUCCESS_MESSAGE)
