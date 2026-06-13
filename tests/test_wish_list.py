@@ -15,9 +15,9 @@ class TestWishlist(BaseTest):
             self.products_page.add_product_to_wishlist(self.__PRODUCT_NAME)
             self.my_wish_list_page.add_product_to_cart_from_wishlist()
 
-            a=self.my_wish_list_page.get_product_name()
+            product_name=self.my_wish_list_page.get_product_name()
             actual_result = self.my_wish_list_page.get_pass_message()
-            expected_result = f"You have added {a} to your shopping cart!"
+            expected_result = f"You have added {product_name} to your shopping cart!"
             assert actual_result == expected_result
 
       def test_02_remove_from_wishlist(self):
