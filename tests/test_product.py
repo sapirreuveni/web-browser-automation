@@ -21,8 +21,8 @@ class TestProduct(BaseTest):
         assert actual_result == expected_result
 
     def test_03_product_likes_count(self):
-         expected_result =self.products_page.get_number_item()
-         actual_result = 1
+         actual_result = self.products_page.get_number_item()
+         expected_result = 1
          assert actual_result == expected_result
 
 
