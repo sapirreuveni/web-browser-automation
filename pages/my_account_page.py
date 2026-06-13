@@ -65,21 +65,21 @@ class MainPage(HeaderComp,BasePage):
         self.click(self.__SIDE_BAR_CHANGE_PASSWORD_BTN)
         self.fill_text(self.__PASSWORD_FIELD,password)
         self.fill_text(self.__CONFIRM_PASSWORD_FIELD,password)
-        self.continue_bth()
+        self.continue_btn()
 
     def long_out_by_side_bar(self):
         self.click(self.__SIDE_BAR_LOGOUT_BTN)
-        self.continue_bth()
+        self.continue_btn()
 
     def newsletter(self,value):
         self.click(self.__SIDE_BAR_NEWSLETTER_BTN)
         if value=="no":
             self.click(self.__NEWSLETTER_NO)
-            self.continue_bth()
+            self.continue_btn()
 
         else:
             self.click(self.__NEWSLETTER_YES)
-            self.continue_bth()
+            self.continue_btn()
 
     def update_success_message(self):
         text = self.get_text(self.__DETAILS_UPDATED_SUCCESS_MESSAGE)
