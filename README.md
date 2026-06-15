@@ -1,6 +1,16 @@
 # 🌐 Web Browser Automation
 
-An end-to-end test automation framework for [TutorialsNinja demo store](https://tutorialsninja.com/demo/index.php), built with **Playwright** and **Pytest** using the **Page Object Model (POM)** design pattern.
+![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white)
+![Playwright](https://img.shields.io/badge/Playwright-Automation-green?logo=playwright&logoColor=white)
+![Pytest](https://img.shields.io/badge/Pytest-Framework-orange?logo=pytest&logoColor=white)
+![Allure](https://img.shields.io/badge/Allure-Reports-purple)
+![Tests](https://img.shields.io/badge/Tests-25%20Passed-brightgreen)
+
+An end-to-end test automation framework for the [TutorialsNinja demo store](https://tutorialsninja.com/demo/index.php), built with **Python**, **Playwright** and **Pytest** using the **Page Object Model (POM)** design pattern.
+
+---
+
+## 📊 Test Report
 
 ![Allure Report](docs/allure-report.png)
 
@@ -8,19 +18,21 @@ An end-to-end test automation framework for [TutorialsNinja demo store](https://
 
 ## ✨ Features
 
-- 🏗️ **Page Object Model** architecture for clean, maintainable test code
+- 🏗️ **Page Object Model** — clean, maintainable and scalable architecture
 - 🔦 **Element highlighting** on interaction for easy visual debugging
 - ⚙️ **Centralized configuration** via `config.ini`
-- 🧪 **Tests covering:** login, cart, products, search, wish list, contact, user registration, and account details
+- 📊 **Allure Reports** — detailed test reports with environment info
+- 🧪 **25 automated tests** covering: login, cart, products, search, wish list, contact, user registration and account details
 
 ---
 
 ## 📁 Project Structure
 
 ```
-myproject/
-├── pages/              # Page Object classes
-│   ├── base_page.py    # Shared actions (click, fill, highlight, etc.)
+web-browser-automation/
+├── pages/                      # Page Object classes
+│   ├── base_page.py            # Shared actions (click, fill, highlight)
+│   ├── header.py               # Header & navigation component
 │   ├── login_page.py
 │   ├── cart_page.py
 │   ├── products_page.py
@@ -28,9 +40,9 @@ myproject/
 │   ├── my_account_page.py
 │   ├── contact_details_page.py
 │   └── create_profile_page.py
-├── tests/              # Test classes
-│   ├── base_test.py    # Base class with page object references
-│   ├── conftest.py     # Pytest fixtures (browser setup & login)
+├── tests/                      # Test classes
+│   ├── base_test.py            # Base class with page object references
+│   ├── conftest.py             # Pytest fixtures (browser setup & login)
 │   ├── test_cart.py
 │   ├── test_login.py
 │   ├── test_product.py
@@ -40,9 +52,11 @@ myproject/
 │   ├── test_user.py
 │   └── test_details.py
 ├── utils/
-│   ├── config.ini.example  # Config template (copy to config.ini)
+│   ├── config.ini.example      # Config template (copy to config.ini)
 │   ├── config_reader.py
 │   └── data_generator.py
+├── docs/
+│   └── allure-report.png
 └── requirements.txt
 ```
 
@@ -72,20 +86,12 @@ Edit `utils/config.ini` with your **email** and **password** for the demo site.
 
 ## ▶️ Running Tests
 
-**Run all tests:**
-```bash
-pytest
-```
-
-**Run a specific test file:**
-```bash
-pytest tests/test_cart.py
-```
-
-**Run with browser visible (headed mode):**
-```bash
-pytest --headed
-```
+| Command | Description |
+|---------|-------------|
+| `pytest` | Run all tests |
+| `pytest --headed` | Run with browser visible |
+| `pytest tests/test_login.py` | Run a specific test file |
+| `allure serve tests/reports` | Open Allure report in browser |
 
 ---
 
@@ -95,4 +101,5 @@ pytest --headed
 |------|---------|
 | 🎭 [Playwright](https://playwright.dev/python/) | Browser automation |
 | 🧪 [Pytest](https://pytest.org/) | Test framework |
-| 🐍 Python | Programming language |
+| 🐍 Python 3.11 | Programming language |
+| 📊 [Allure](https://allurereport.org/) | Test reporting |
