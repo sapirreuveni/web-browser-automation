@@ -2,6 +2,8 @@
 
 An end-to-end test automation framework for [TutorialsNinja demo store](https://tutorialsninja.com/demo/index.php), built with **Playwright** and **Pytest** using the **Page Object Model (POM)** design pattern.
 
+![Allure Report](docs/allure-report.png)
+
 ---
 
 ## ✨ Features

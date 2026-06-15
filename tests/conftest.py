@@ -1,3 +1,5 @@
+import json
+import os
 import pytest
 from pages.cart_page import CartPage
 from pages.contact_details_page import ContactPage
@@ -7,6 +9,27 @@ from pages.my_account_page import MainPage
 from pages.my_wish_list_page import WishListPage
 from pages.products_page import ProductPage
 from utils.config_reader import ConfigReader
+
+@pytest.fixture(scope="session", autouse=True)
+def setup_allure_meta():
+    reports_dir = os.path.join(os.path.dirname(__file__), "reports")
+    os.makedirs(reports_dir, exist_ok=True)
+
+    with open(os.path.join(reports_dir, "environment.properties"), "w", encoding="utf-8") as f:
+        f.write("Browser=Chromium\n")
+        f.write("Python.Version=3.11\n")
+        f.write("Framework=Pytest + Playwright\n")
+        f.write("Base.URL=https://tutorialsninja.com/demo\n")
+        f.write("OS=Windows 10\n")
+
+    categories = [
+        {"name": "Test failures", "matchedStatuses": ["failed"], "messageRegex": ".*AssertionError.*"},
+        {"name": "Broken tests", "matchedStatuses": ["broken"]},
+        {"name": "Ignored tests", "matchedStatuses": ["skipped"]}
+    ]
+    with open(os.path.join(reports_dir, "categories.json"), "w", encoding="utf-8") as f:
+        json.dump(categories, f, indent=2)
+
 
 @pytest.fixture(scope="class", autouse=True)
 def setup_page_class(request, browser):
