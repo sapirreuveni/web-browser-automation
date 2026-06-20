@@ -1,6 +1,12 @@
 from tests.base_test import BaseTest
+from utils.config_reader import ConfigReader
 
 class TestPersonalDetails(BaseTest):
+
+    def test_00_reset_details(self):
+        email = ConfigReader.read_config("general", "email")
+        self.my_account_page.navigate_to_personal_details_from_sidebar()
+        self.my_account_page.change_personal_details("עדי", email, "לוי", "0534545468")
 
     def _go_and_get_before(self):
         self.my_account_page.navigate_to_personal_details_from_sidebar()
@@ -24,7 +30,7 @@ class TestPersonalDetails(BaseTest):
     def test_invalid_email_should_not_save_anything(self):
         before = self._go_and_get_before()
         self.my_account_page.change_personal_details(
-            before["name"], "sapir3173gmail.com", before["lastname"], before["telephone"]
+            before["name"], "Adi12345@gmail.com", before["lastname"], before["telephone"]
         )
         after = self._reload_and_get_after()
         assert after == before
@@ -44,3 +50,8 @@ class TestPersonalDetails(BaseTest):
         )
         after = self._reload_and_get_after()
         assert after == before
+
+    def test_99_reset_details(self):
+        email = ConfigReader.read_config("general", "email")
+        self.my_account_page.navigate_to_personal_details_from_sidebar()
+        self.my_account_page.change_personal_details("עדי", email, "לוי", "0534545468")
