@@ -4,7 +4,7 @@
 ![Playwright](https://img.shields.io/badge/Playwright-Automation-green?logo=playwright&logoColor=white)
 ![Pytest](https://img.shields.io/badge/Pytest-Framework-orange?logo=pytest&logoColor=white)
 ![Allure](https://img.shields.io/badge/Allure-Reports-purple)
-![Tests](https://img.shields.io/badge/Tests-25%20Passed-brightgreen)
+![Tests](https://img.shields.io/badge/Tests-24%2F27%20Passed-brightgreen)
 
 An end-to-end test automation framework for the [TutorialsNinja demo store](https://tutorialsninja.com/demo/index.php), built with **Python**, **Playwright** and **Pytest** using the **Page Object Model (POM)** design pattern.
 
@@ -22,7 +22,8 @@ An end-to-end test automation framework for the [TutorialsNinja demo store](http
 - 🔦 **Element highlighting** on interaction for easy visual debugging
 - ⚙️ **Centralized configuration** via `config.ini`
 - 📊 **Allure Reports** — detailed test reports with environment info
-- 🧪 **25 automated tests** covering: login, cart, products, search, wish list, contact, user registration and account details
+- 🧪 **27 automated tests** covering: login, cart, products, search, wish list, contact, user registration and account details
+- 🐛 **Found a real validation bug** on the site (invalid name/lastname/phone are accepted instead of rejected)
 
 ---
 
