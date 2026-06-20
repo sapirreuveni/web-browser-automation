@@ -30,7 +30,7 @@ class TestPersonalDetails(BaseTest):
     def test_invalid_email_should_not_save_anything(self):
         before = self._go_and_get_before()
         self.my_account_page.change_personal_details(
-            before["name"], "Adi12345@gmail.com", before["lastname"], before["telephone"]
+            before["name"], "Adi12345gmail.com", before["lastname"], before["telephone"]
         )
         after = self._reload_and_get_after()
         assert after == before
