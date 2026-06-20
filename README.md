@@ -12,7 +12,7 @@ An end-to-end test automation framework for the [TutorialsNinja demo store](http
 
 ## 📊 Test Report
 
-![Allure Report](docs/allure-report.png)
+![Allure Report](docs/allure-report.png?v=2)
 
 ---
 
